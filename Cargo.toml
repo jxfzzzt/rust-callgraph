@@ -1,6 +1,25 @@
 [package]
-name = "rust-callgraph"
+name = "callgraph"
 version = "0.1.0"
 edition = "2024"
+default-run = "callgraph"
 
 [dependencies]
+
+
+[dev-dependencies]
+compiletest = { version = "0.11.2", package = "compiletest_rs" }
+rustc_middle = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_middle" }
+rustc_data_structures = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_data_structures" }
+rustc_index = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_index" }
+rustc_session = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_session" }
+rustc_driver = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_driver" }
+rustc_hir = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_hir" }
+rustc_interface = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_interface" }
+rustc_public = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_public" }
+rustc_span = { path = "/Users/zhouzhuotong/rust_projects/rust/compiler/rustc_span" }
+
+[package.metadata.rust-analyzer]
+# This crate uses #![feature(rustc_private)] to access `rustc` APIs.
+# We're tied to the specific `rustc` version 1.74.0-nigthly 2024-05-06.
+rustc_private = true
